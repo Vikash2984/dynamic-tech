@@ -1,12 +1,22 @@
-// ===== rotating hero words =====
+// ===== rotating hero words (Merit America-style slide) =====
 (function(){
-  const words = document.querySelectorAll('.hp-cw');
-  let i = 0;
-  setInterval(() => {
-    words[i].classList.remove('is-active');
-    i = (i + 1) % words.length;
-    words[i].classList.add('is-active');
-  }, 2200);
+  const line = document.querySelector('.hp-rline');
+  if(!line) return;
+  const words = line.querySelectorAll('.hp-cw');
+  const last = words.length - 1;
+  let cur = 0;
+  const DWELL = 1600;
+  const show = i => {
+    words.forEach((w,k) => w.classList.toggle('is-active', k===i));
+    line.style.transform = 'translateX(' + (-words[i].offsetLeft) + 'px)';
+  };
+  const step = () => {
+    if(cur < last){ cur++; show(cur); setTimeout(step, DWELL); }
+    else { setTimeout(() => { line.style.transition='none'; cur=0; show(0); requestAnimationFrame(()=>{ line.style.transition=''; setTimeout(step, DWELL); }); }, DWELL*1.4); }
+  };
+  const start = () => { show(0); setTimeout(step, DWELL); };
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(start); else start();
+  window.addEventListener('resize', () => { const t=line.style.transition; line.style.transition='none'; show(cur); requestAnimationFrame(()=>{ line.style.transition=t; }); });
 })();
 
 // ===== nav: burger + active tab spy + smooth tab jump =====
