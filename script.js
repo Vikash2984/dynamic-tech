@@ -20,6 +20,27 @@
 })();
 
 // ===== nav: burger + active tab spy + smooth tab jump =====
+// ===== cover flow carousel =====
+(function(){
+  const flow = document.getElementById('coverFlow');
+  if(!flow) return;
+  const cards = Array.from(flow.querySelectorAll('.cf-card'));
+  const n = cards.length;
+  let center = 0;
+  const layout = () => {
+    cards.forEach((c,i) => {
+      let d = i - center;
+      if(d > n/2) d -= n;
+      if(d < -n/2) d += n;
+      c.dataset.pos = (Math.abs(d) <= 2) ? String(d) : 'hide';
+    });
+  };
+  cards.forEach((c,i) => c.addEventListener('click', () => { center = i; layout(); reset(); }));
+  let timer;
+  const reset = () => { clearInterval(timer); timer = setInterval(() => { center = (center+1) % n; layout(); }, 3200); };
+  layout(); reset();
+})();
+
 const burger = document.getElementById('burger');
 const navLinks = document.querySelector('.ma-nav-links');
 burger.addEventListener('click', () => navLinks.classList.toggle('open'));
