@@ -72,18 +72,20 @@ document.querySelectorAll('.snap-sec').forEach(s => spy.observe(s));
 
 // ===== alumni parallax carousels (auto-populate) =====
 const testimonials = [
-  ["Merit-style program built my confidence. I got the job I wanted.", "Monique", "Logistics Engineer"],
-  ["I upskilled without spending time or money on college.", "Kory", "IT Software Developer"],
-  ["Changed my life — transferable skills and real confidence.", "Briana", "IT Support Specialist"],
-  ["Flexibility was great. Worked 50–60 hrs/week and still kept up.", "Heather", "Data Analyst"],
-  ["The stepping stone I needed. My foot in the door.", "Laura", "EDI Coordinator"],
-  ["New career in IT — opportunities I didn't have before.", "Joshua", "IT Support Analyst"],
-  ["Would've cost more and taken longer at community college.", "Elizabeth", "Software Engineer"],
-  ["I knew I had people in my corner, no matter how tough.", "Ebauni", "Business Analyst"],
-  ["Gave me a chance to pursue what I actually wanted.", "Corey", "Cloud Ops Associate"],
-  ["Learned how to pitch myself — resume, cover letter, all of it.", "Shonneri", "Operations Lead"],
-  ["Hands-on training on real machines made all the difference.", "Ravi", "AC Technician"],
-  ["From helper to supervisor in under a year.", "Priya", "Electrical Supervisor"]
+  ["Placed at Imdad, UAE — earning AED 3,400/month.", "MD Jawed", "Imdad · UAE"],
+  ["Placed at Bara Kali LLP, UAE — earning AED 2,500/month.", "Arman Ansari", "Bara Kali LLP · UAE"],
+  ["Placed at Gisco, UAE — earning AED 2,100/month.", "Jissu", "Gisco · UAE"],
+  ["Placed at Ejadah, UAE — earning AED 2,500/month.", "Adil", "Ejadah · UAE"],
+  ["Placed at Ejadah, UAE — earning AED 1,800/month.", "MD Samir Ansari", "Ejadah · UAE"],
+  ["Placed at Gisco, UAE — earning AED 1,300/month.", "Samir Khan", "Gisco · UAE"],
+  ["Placed at Gisco, UAE — earning AED 1,300/month.", "MD Samir", "Gisco · UAE"],
+  ["Placed at Gisco, UAE — earning AED 1,300/month.", "Sultan Khan", "Gisco · UAE"],
+  ["Placed at Lux Design Villas, UAE — earning AED 1,400/month.", "Rohit Ansari", "Lux Design Villas · UAE"],
+  ["Placed at Gisco, UAE — earning AED 1,300/month.", "MD Farhan", "Gisco · UAE"],
+  ["Placed at Oxy Pro, UAE — earning AED 1,500/month.", "MD Asif", "Oxy Pro · UAE"],
+  ["Placed in Kuwait — earning KWD 250/month.", "MD Imran", "Kuwait"],
+  ["Placed in Saudi Arabia — earning SAR 2,500/month.", "Arzu", "Saudi Arabia"],
+  ["Placed in Saudi Arabia — earning SAR 1,800/month.", "Faizal Khan", "Saudi Arabia"]
 ];
 function card(t){
   const [q,n,r] = t;
@@ -95,7 +97,7 @@ const rowA = testimonials.slice(0, half), rowB = testimonials.slice(half);
 document.getElementById('ptrackA').innerHTML = [...rowA, ...rowA].map(card).join('');
 document.getElementById('ptrackB').innerHTML = [...rowB, ...rowB].map(card).join('');
 
-const companies = ["JPMorganChase","Accenture","Infosys","Instacart","Lyft","DoorDash","Intact","Google","TCS","Wipro","Reliance","Tata Steel"];
+const companies = ["Izadah — UAE","Al Dhabi Group — UAE","Arees — Saudi Arabia","Madinat Jalfar — UAE","Marmoom — UAE","ZRT Contracting LLC — UAE","El Seif Engineering — Saudi Arabia","Whitespot — UAE","Elegancia — Rwanda","BK Gulf LLC — UAE","Oxypro — UAE","LG","Samsung","Hitachi","Blue Star","Daikin","Carrier","Whirlpool","Panasonic","O General","Mitsubishi"];
 document.getElementById('acTrack').innerHTML = [...companies,...companies].map(c=>`<span>${c}</span>`).join('');
 
 // ===== contact form =====

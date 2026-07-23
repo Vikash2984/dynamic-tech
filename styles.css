@@ -230,4 +230,38 @@ h1,h2,h3,h4{font-family:var(--font);font-weight:800;letter-spacing:-.02em;line-h
   .ma-container{padding:24px 20px 40px}
   .acard{width:260px}
   .site-footer .footer-content{flex-direction:column;text-align:center;padding:0 20px}
+
+  /* HERO: tighten spacing so carousel doesn't overlap CTA */
+  .hp-inner{padding:20px 20px 16px;gap:18px;min-height:calc(100vh - var(--nav-h))}
+  .hp-sub{margin-bottom:16px;font-size:14.5px}
+  .hp-cta{padding:13px 24px;font-size:15px}
+  .cover-flow{height:210px;margin-top:8px}
+  .cf-card{width:160px;height:195px;padding:10px;border-radius:16px}
+  .cf-card .ph-img{border-radius:10px}
+  .cf-card figcaption{padding:8px 3px 2px;font-size:11px}
+
+  /* CONTACT: fit both cards inside the snap section (nav + footer accounted for) */
+  .ma-contact .ma-container{padding:16px 20px 12px;gap:12px;justify-content:flex-start}
+  .ma-contact .courses-header{margin:0 auto 4px}
+  .ma-contact .courses-header .eyebrow{margin-bottom:6px}
+  .ma-contact .courses-header h2{font-size:24px;margin-bottom:4px}
+  .ma-contact .courses-header p{font-size:13px;line-height:1.4}
+  .ma-contact .contact-grid{gap:14px}
+  .contact-info{padding:18px;border-radius:16px}
+  .contact-info h3{font-size:17px;margin-bottom:10px}
+  .ci-row{padding:8px 0;gap:10px}
+  .ci-row .ic{font-size:16px}
+  .ci-row b{font-size:10px;margin-bottom:2px}
+  .ci-row div{font-size:12.5px;line-height:1.35}
+  .contact-form{padding:18px;border-radius:16px}
+  .fg{gap:10px}
+  .field input,.field select,.field textarea{padding:10px 12px;font-size:13px}
+  .field textarea{min-height:60px}
+  .field label{font-size:11px}
+  .submit-row{margin-top:12px;gap:10px}
+  .form-note{font-size:11px}
+  /* allow contact section to scroll so the form card isn't clipped by footer */
+  .ma-contact{height:auto;min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;overflow:visible}
+  .ma-contact .ma-container{flex:0 0 auto;justify-content:flex-start;padding-bottom:24px}
+  .ma-contact .site-footer{margin-top:auto}
 }
